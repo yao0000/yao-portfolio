@@ -32,7 +32,7 @@ import Container from '@/components/common/container/Container.vue';
                     </div>
 
                     <div class="flex">
-                        <a href="https://drive.google.com/file/d/1eyVPGDU8p_gS7vtN6UY8G6Rg4bq-YrGb/view?usp=drive_link"
+                        <a href="https://drive.google.com/file/d/1JQ4ITT4xVfnuXczpyXD8imowP-xZGXlM/view?usp=sharing"
                             target="_blank">
                             <Button
                                 class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-blue-500 hover:to-yellow-500 transition-colors duration-300">
