@@ -7,11 +7,12 @@ import Container from '@/components/common/container/Container.vue';
 
 <template>
     <div class="h-full flex-1 flex flex-col space-y-10 flex items-center">
-        <Container class="flex-1 flex items-center">
-            <div class="flex flex-row space-x-15">
-                <div
-                    class="w-80 h-80 rounded-full overflow-hidden border-4 border-gray-800 inline-block flex items-center">
-                    <img src="/src/assets//img//Profile_Photo.jpeg" />
+        <Container class="flex-1 flex items-center justify-center items-center">
+            <div class="flex flex-col md:flex-row md:space-x-15">
+                <div class="overflow-hidden border-gray-800 flex items-center justify-center">
+                    <img src="/src/assets/img/Profile_Photo.jpeg"
+                        class="w-[180px] h-[180px] rounded-full border-4 border-gray-800 object-cover"
+                        alt="Profile photo" />
                 </div>
 
                 <div class="flex flex-col justify-center space-y-3">
@@ -32,7 +33,7 @@ import Container from '@/components/common/container/Container.vue';
                     </div>
 
                     <div class="flex">
-                        <a href="https://drive.google.com/file/d/1gvdD45rRXmg8vxsU1GoBaH9SxQuT6A3O/view?usp=drive_link"
+                        <a href="https://drive.google.com/file/d/1eyVPGDU8p_gS7vtN6UY8G6Rg4bq-YrGb/view?usp=drive_link"
                             target="_blank">
                             <Button
                                 class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-blue-500 hover:to-yellow-500 transition-colors duration-300">
