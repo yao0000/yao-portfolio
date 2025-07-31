@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { Skills } from '@/types/Skills';
-import Footer from '@/components/common/footer/Footer.vue';
 import Container from '@/components/common/container/Container.vue';
 import SkillsContainer from '@/components/About/SkillsContainer.vue';
 import ContainerTitle from '@/components/common/container/ContainerTitle.vue';
@@ -43,7 +42,6 @@ const frontEndSkillsList: Skills[] = [
                     <SkillsContainer title="Frontend" :list="frontEndSkillsList" />
                 </ContainerContent>
             </Container>
-            <Footer />
         </div>
     </div>
 </template>

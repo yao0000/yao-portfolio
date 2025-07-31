@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import MenuBar from '@/components/menu/MenuBar.vue';
+import Footer from '@/components/common/footer/Footer.vue';
 </script>
 
 <template>
@@ -8,5 +9,6 @@ import MenuBar from '@/components/menu/MenuBar.vue';
         <div class="flex-1 px-15 py-5">
             <router-view />
         </div>
+        <Footer />
     </div>
 </template>

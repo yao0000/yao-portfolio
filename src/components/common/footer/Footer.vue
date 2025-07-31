@@ -5,7 +5,7 @@ import { Github, Linkedin, Mail } from 'lucide-vue-next';
 </script>
 
 <template>
-    <div class="flex flex-col items-center">
+    <div class="mt-auto mb-10 flex flex-col items-center">
         <div class="flex flex-row items-center space-x-5">
             <ButtonFooter label="GitHub" href="https://github.com/yao0000">
                 <Github />
@@ -24,9 +24,11 @@ import { Github, Linkedin, Mail } from 'lucide-vue-next';
             </ButtonFooter>
         </div>
 
-        <div>
+        <div class="flex flex-col items-center">
             <div>
                 Last Updated: 30/7/2025
+            </div>
+            <div>
                 © Yao En Chong
             </div>
         </div>

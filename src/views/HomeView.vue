@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { LinkIcon } from "@heroicons/vue/24/outline";
-import Footer from '@/components/common/footer/Footer.vue';
 import Button from '@/components/common/controls/Button.vue';
 import Container from '@/components/common/container/Container.vue';
 </script>
@@ -47,8 +46,5 @@ import Container from '@/components/common/container/Container.vue';
                 </div>
             </div>
         </Container>
-        <div class="flex flex-row">
-            <Footer />
-        </div>
     </div>
 </template>
