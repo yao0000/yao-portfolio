@@ -7,18 +7,43 @@ import ContainerContent from '@/components/common/container/ContainerContent.vue
 
 const programmingLangs: Skills[] = [
     { icon: 'logos:javascript', label: 'JavaScript' },
+    { icon: 'devicon:html5-wordmark', label: 'HTML'},
+    { icon: 'logos:css-3', label: 'CSS' },
+    { icon: 'vscode-icons:file-type-typescript-official', label: 'TypeScript' },
+    { icon: 'vscode-icons:file-type-plsql', label: 'SQL' },
+    { icon: 'mdi:language-csharp', label: 'C#' },
+    { icon: 'vscode-icons:file-type-dartlang', label: 'Dart' },
+    { icon: 'devicon:java-wordmark', label: 'JAVA'},
+    { icon: 'vscode-icons:file-type-python', label: 'Python' }
 ]
 
 const frontEndSkillsList: Skills[] = [
     { icon: 'vscode-icons:file-type-vue', label: 'Vue' },
     { icon: 'catppuccin:tailwind', label: 'Tailwind' },
-    { icon: 'vscode-icons:file-type-typescript-official', label: 'TypeScript' }
+    { icon: 'logos:dotnet', label: 'WinForms'},
+    { icon: 'devicon:android', label: 'Android' },
+    { icon: 'vscode-icons:file-type-flutter', label: 'Fluttter'},
+]
+
+const backendSkillsList: Skills[] = [
+    { icon: 'vscode-icons:file-type-firebase', label: 'Firebase' },
+    { icon: 'devicon:dotnetcore', label: '.NET Core' },
+]
+
+const databaseSkillsList: Skills[] = [
+    { icon: 'devicon:microsoftsqlserver-wordmark', label: 'Microsoft SQL'},
+    { icon: 'logos:mysql', label: 'My SQL'}
+]
+
+const languages: Skills[] = [
+    { icon: 'icon-park:chinese', label: '中文 Mandarin'},
+    { icon: 'icon-park:english', label: 'English'},
 ]
 </script>
 
 <template>
-    <div class="h-full w-full flex justify-center">
-        <div class="flex flex-col w-full items-center space-y-10">
+    <div class="flex-1 h-full w-full flex justify-center">
+        <div class="flex-1 flex flex-col w-full items-center space-y-10">
             <Container>
                 <ContainerTitle>
                     Hello, there
@@ -39,7 +64,29 @@ const frontEndSkillsList: Skills[] = [
                 <ContainerContent class="space-y-5">
                     <SkillsContainer title="Programming Languages" :list="programmingLangs" />
 
-                    <SkillsContainer title="Frontend" :list="frontEndSkillsList" />
+                    <SkillsContainer title="Frontend Framework" :list="frontEndSkillsList" />
+
+                    <SkillsContainer title="Backend Framework" :list="backendSkillsList"/>
+
+                    <SkillsContainer title="Database Framework" :list="databaseSkillsList"/>
+                </ContainerContent>
+            </Container>
+
+            <Container>
+                <ContainerTitle>
+                    Soft Skills
+                </ContainerTitle>
+                <ContainerContent>
+
+                </ContainerContent>
+            </Container>
+
+            <Container>
+                <ContainerTitle>
+                    Languages
+                </ContainerTitle>
+                <ContainerContent>
+                    <SkillsContainer title="" :list="languages" />
                 </ContainerContent>
             </Container>
         </div>
