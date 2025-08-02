@@ -9,11 +9,16 @@ defineProps<{
 
         <div class="
             text-white
-            mx-5 cursor-pointer
-            border-b-2
+            lg:mx-5
+            lg:-pl-5
+            pl-5
+            cursor-pointer
+            lg:border-b-2
             border-transparent
             hover:border-current
-            hover:px-5
+            lg:hover:px-5
+            lg:hover:bg-transparent
+            hover:bg-gray-700
             transition-all
             duration-300
         ">
