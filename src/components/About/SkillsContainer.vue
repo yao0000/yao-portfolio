@@ -9,6 +9,7 @@ const props = defineProps<{
     skills?: SkillsItem
     isTitleShow?: boolean
 }>();
+console.log(props.skills);
 
 const languageStore = useLanguageStore()
 </script>

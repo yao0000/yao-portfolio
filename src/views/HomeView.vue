@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { LinkIcon } from "@heroicons/vue/24/outline";
 import Button from '@/components/common/controls/Button.vue';
 import Container from '@/components/common/container/Container.vue';
 import { useProfileStore } from "@/stores/profileStore";
@@ -34,18 +33,7 @@ const profileStore = useProfileStore();
                         Click button below to explore my latest information.
                     </div>
 
-                    <div class="flex">
-                        <a :href="profileStore.profile.url.resume"
-                            target="_blank">
-                            <Button
-                                class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-blue-500 hover:to-yellow-500 transition-colors duration-300">
-                                <div>
-                                    Resume
-                                </div>
-                                <LinkIcon class="w-4 h-4" />
-                            </Button>
-                        </a>
-                    </div>
+                    <Button :href="profileStore.profile.url.resume">Resume</Button>
                 </div>
             </div>
         </Container>

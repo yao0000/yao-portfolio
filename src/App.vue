@@ -18,8 +18,8 @@ onMounted(async() => {
 </script>
 
 <template>
-  <div class="h-screen">
+  <div class="h-screen animated-gradient">
     <LoadingView v-if="isLoading" />
-    <MainLayout v-else class="h-full bg-black"/>
+    <MainLayout v-else class="h-full"/>
   </div>
 </template>

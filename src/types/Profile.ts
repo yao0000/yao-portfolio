@@ -4,6 +4,7 @@ export interface Profile {
     skillsList?: SkillsItem[]
     workingExperiences?: Experiences[]
     educationExperiences?: Experiences[]
+    projects?: Project[]
 }
 
 export interface Link {
@@ -15,7 +16,7 @@ export interface Link {
 }
 
 export interface SkillsItem {
-    id: string;
+    id?: string;
     label?: string;
     list: Skills[];
 }
@@ -29,4 +30,13 @@ export interface Experiences {
     title: string;
     duration: string;
     location: string;
+}
+
+export interface Project {
+    title: string;
+    info: string;
+    value: number;
+    duration: string;
+    tech: Skills[];
+    url: {label: string; link: string}[]
 }

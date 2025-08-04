@@ -15,7 +15,7 @@ const languageStore = useLanguageStore();
         <div class="flex-1 flex flex-col w-full items-center space-y-10">
             <Container>
                 <ContainerTitle>
-                    Hello, there
+                    {{ languageStore.getLanguage('hello') }}
                 </ContainerTitle>
                 <ContainerContent>
                     <div v-for="paragraph in languageStore.getLanguage('intro').split('\n')">

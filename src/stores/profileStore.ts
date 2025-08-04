@@ -9,6 +9,7 @@ export const useProfileStore = defineStore('profile', () => {
     const load = async(): Promise<void> => {
         await loadProfile();
         await loadSkills();
+        await loadProjects();
     }
 
     const loadProfile = async() => {
@@ -55,6 +56,11 @@ export const useProfileStore = defineStore('profile', () => {
         // load languages
         const languages = data.find(item => item.id === 'languages') as SkillsItem | undefined;
         profile.value.languages = languages;
+    }
+
+    const loadProjects = async() => {
+        const data = await loadDocs('projects') as any;
+        profile.value.projects = data.sort((a: any, b: any) => b.value - a.value);
     }
 
     return {

@@ -46,7 +46,7 @@ onUnmounted(() => {
                     {{ languageStore.getLanguage('experiences') }}
                 </ButtonMenu>
 
-                <ButtonMenu href="/">
+                <ButtonMenu href="projects">
                     {{ languageStore.getLanguage('projects') }}
                 </ButtonMenu>
 
@@ -76,7 +76,7 @@ onUnmounted(() => {
                 <ButtonMenu href="experiences" @click="isMenuShow = false">
                     {{ languageStore.getLanguage('experiences') }}
                 </ButtonMenu>
-                <ButtonMenu href="/" @click="isMenuShow = false">
+                <ButtonMenu href="projects" @click="isMenuShow = false">
                     {{ languageStore.getLanguage('projects') }}
                 </ButtonMenu>
                 <ButtonMenu href="about" @click="isMenuShow = false">
