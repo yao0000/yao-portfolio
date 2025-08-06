@@ -3,13 +3,13 @@ import { Icon } from '@iconify/vue';
 import type { SkillsItem } from '@/types/Profile';
 import ContainerTitle from '../common/container/ContainerTitle.vue';
 import { useLanguageStore } from '@/stores/languageStore';
+import SkillTag from './SkillTag.vue';
 
-const props = defineProps<{
+defineProps<{
     item?: SkillsItem
     skills?: SkillsItem
     isTitleShow?: boolean
 }>();
-console.log(props.skills);
 
 const languageStore = useLanguageStore()
 </script>
@@ -24,17 +24,16 @@ const languageStore = useLanguageStore()
                 class="flex flex-wrap items-center px-2 py-2 space-x-2 cursor-default border-2 rounded-lg bg-gray-800 hover:-translate-y-1 duration-300">
                 <Icon :icon="data.icon" />
                 <div>
-                    {{ data.label }}
+                    {{ languageStore.getLanguage(data.label) }}
                 </div>
             </div>
 
-            <div v-if="skills" v-for="data in skills.list"
-                class="flex flex-wrap items-center px-2 py-2 space-x-2 cursor-default border-2 rounded-lg bg-gray-800 hover:-translate-y-1 duration-300">
+            <SkillTag v-if="skills" v-for="data in skills.list">
                 <Icon :icon="data.icon" />
                 <div>
                     {{ data.label }}
                 </div>
-            </div>
+            </SkillTag>
         </div>
     </div>
 </template>

@@ -26,7 +26,7 @@ const isExpandedList = ref<Record<number, boolean>>({});
                 </div>
             </div>
             <div class="ms-auto flex items-center">
-                <Icon class="cursor-pointer" :icon="isExpandedList[item.value] ? 'material-symbols:keyboard-arrow-up' : 'material-symbols:keyboard-arrow-down-rounded'" width="50" height="50"
+                <Icon class="cursor-pointer" :icon="(isExpandedList[item.value] ?? true) ? 'material-symbols:keyboard-arrow-up' : 'material-symbols:keyboard-arrow-down-rounded'" width="50" height="50"
                     @click="isExpandedList[item.value] = !(isExpandedList[item.value] ?? true)" />
             </div>
         </div>

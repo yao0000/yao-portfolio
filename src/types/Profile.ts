@@ -2,6 +2,7 @@ export interface Profile {
     url: Link;
     languages?: SkillsItem
     skillsList?: SkillsItem[]
+    softSkills?: SkillsItem
     workingExperiences?: Experiences[]
     educationExperiences?: Experiences[]
     projects?: Project[]

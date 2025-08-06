@@ -2,8 +2,10 @@
 import Button from '@/components/common/controls/Button.vue';
 import Container from '@/components/common/container/Container.vue';
 import { useProfileStore } from "@/stores/profileStore";
+import { useLanguageStore } from '@/stores/languageStore';
 
 const profileStore = useProfileStore();
+const getLanguage = useLanguageStore().getLanguage;
 </script>
 
 <template>
@@ -18,22 +20,22 @@ const profileStore = useProfileStore();
 
                 <div class="flex flex-col justify-center space-y-3">
                     <div class="text-2xl">
-                        Hello I'm
+                        {{ getLanguage('helloIm') }}
                     </div>
 
                     <div class="text-3xl font-bold">
-                        Yao
+                        {{ getLanguage('sName') }}
                     </div>
 
                     <div class="text-sm">
-                        I passionate about fullstack development. Turning ideas into innovative development.
+                        {{ getLanguage('homeIntro') }}
                     </div>
 
                     <div class="text-xs italic">
-                        Click button below to explore my latest information.
+                        {{ getLanguage('resumeInfo') }}
                     </div>
 
-                    <Button :href="profileStore.profile.url.resume">Resume</Button>
+                    <Button :href="profileStore.profile.url.resume">{{ getLanguage('resume') }}</Button>
                 </div>
             </div>
         </Container>

@@ -10,8 +10,12 @@ div {
     @apply text-white text-justify;
 }
 
+.custom-bg-color {
+  background-color: #182d3d;
+}
+
 .animated-gradient {
-  background: linear-gradient(-45deg, #ee7752, #666666, #003366, #23d5ab);
+  background: linear-gradient(-45deg, #013220, #666666, #003366, #23d5ab);
   background-size: 400% 400%;
   animation: gradient-x 15s ease infinite;
 }

@@ -18,7 +18,7 @@ onMounted(async() => {
 </script>
 
 <template>
-  <div class="h-screen animated-gradient">
+  <div class="h-screen custom-bg-color">
     <LoadingView v-if="isLoading" />
     <MainLayout v-else class="h-full"/>
   </div>

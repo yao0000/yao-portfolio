@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted, nextTick } from "vue";
 import { Icon } from '@iconify/vue';
 import ButtonMenu from './ButtonMenu.vue';
 import { useLanguageStore } from "@/stores/languageStore";
@@ -19,6 +19,16 @@ onMounted(() => {
 onUnmounted(() => {
     window.removeEventListener('resize', updateMenuShow);
 })
+
+async function scrollToTop() {
+    await nextTick();
+    document.getElementById('mainLayout')?.scrollTo(0, 0)
+}
+
+function closeMenu() {
+    scrollToTop();
+    isMenuShow.value = false;
+}
 </script>
 
 <template>
@@ -35,22 +45,22 @@ onUnmounted(() => {
         <div class="flex flex-row py-3 border-b border-gray-600">
 
             <div class="flex-1 flex">
-                <a href="/">
+                <router-link to="home">
                     <div class="text-white cursor-pointer">
                         Yao's Portfolio
                     </div>
-                </a>
+                </router-link>
             </div>
             <div class="hidden lg:flex lg:flex-row">
-                <ButtonMenu href="experiences">
+                <ButtonMenu href="experiences" @click="scrollToTop">
                     {{ languageStore.getLanguage('experiences') }}
                 </ButtonMenu>
 
-                <ButtonMenu href="projects">
+                <ButtonMenu href="projects" @click="scrollToTop">
                     {{ languageStore.getLanguage('projects') }}
                 </ButtonMenu>
 
-                <ButtonMenu href="about">
+                <ButtonMenu href="about" @click="scrollToTop">
                     {{ languageStore.getLanguage('about') }}
                 </ButtonMenu>
             </div>
@@ -73,13 +83,13 @@ onUnmounted(() => {
         <Transition enter-active-class="transition-all duration-300 ease-out" class="h-screen"
             leave-active-class="transition-all duration-300 ease-in">
             <div v-if="isMenuShow" class="flex flex-col border-b border-gray-600 py-4">
-                <ButtonMenu href="experiences" @click="isMenuShow = false">
+                <ButtonMenu href="experiences" @click="closeMenu">
                     {{ languageStore.getLanguage('experiences') }}
                 </ButtonMenu>
-                <ButtonMenu href="projects" @click="isMenuShow = false">
+                <ButtonMenu href="projects" @click="closeMenu">
                     {{ languageStore.getLanguage('projects') }}
                 </ButtonMenu>
-                <ButtonMenu href="about" @click="isMenuShow = false">
+                <ButtonMenu href="about" @click="closeMenu">
                     {{ languageStore.getLanguage('about') }}
                 </ButtonMenu>
             </div>

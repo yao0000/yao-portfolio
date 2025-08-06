@@ -22,7 +22,7 @@ export const useLanguageStore = defineStore('language', () => {
 
     const getLanguage = (key: string) => {
         const item = translations.value.find(obj => obj.id === key);
-        return item ? item[language.value] : ""
+        return item ? item[language.value] : key
     }
     
     return {

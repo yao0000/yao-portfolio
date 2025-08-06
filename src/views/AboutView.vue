@@ -40,7 +40,7 @@ const languageStore = useLanguageStore();
                     {{ languageStore.getLanguage('softSkills') }}
                 </ContainerTitle>
                 <ContainerContent>
-
+                    <SkillsContainer :item="profileStore.profile.softSkills" />
                 </ContainerContent>
             </Container>
 

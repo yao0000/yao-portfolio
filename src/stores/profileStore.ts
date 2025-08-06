@@ -52,6 +52,10 @@ export const useProfileStore = defineStore('profile', () => {
         skillsList.push(technicalSkills.backend);
         skillsList.push(technicalSkills.database);
         profile.value.skillsList = skillsList;
+
+        const softSkills = data.find(item => item.id === 'softSkills') as any;
+        profile.value.softSkills = softSkills;
+
         
         // load languages
         const languages = data.find(item => item.id === 'languages') as SkillsItem | undefined;
