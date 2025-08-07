@@ -1,11 +1,22 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import Button from '@/components/common/controls/Button.vue';
 import Container from '@/components/common/container/Container.vue';
 import { useProfileStore } from "@/stores/profileStore";
 import { useLanguageStore } from '@/stores/languageStore';
+import Dialog from '@/components/ui/dialog/Dialog.vue';
+import DialogContent from "@/components/ui/dialog/DialogContent.vue";
 
 const profileStore = useProfileStore();
 const getLanguage = useLanguageStore().getLanguage;
+
+const showResumeDialog = ref(false);
+const isIframeLoading = ref(false);
+
+function openResumeDialog() {
+    isIframeLoading.value = true;
+    showResumeDialog.value = true;
+}
 </script>
 
 <template>
@@ -35,9 +46,22 @@ const getLanguage = useLanguageStore().getLanguage;
                         {{ getLanguage('resumeInfo') }}
                     </div>
 
-                    <Button :href="profileStore.profile.url.resume">{{ getLanguage('resume') }}</Button>
+                    <Button @click="openResumeDialog">{{ getLanguage('resume') }}</Button>
                 </div>
             </div>
         </Container>
     </div>
+
+    <Dialog v-model:open="showResumeDialog">
+
+        <DialogContent class="h-[38rem] flex justify-center items-center bg-gray-800">
+            <div v-if="isIframeLoading" class="absolute inset-0 flex justify-center items-center z-10 bg-black/50">
+                <div class="w-10 h-10 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+            </div>
+            <iframe
+                :src="profileStore.profile.url.resume"
+                width="100%" height="600px" class="w-[470px] h-[32rem] relative z-0" style="border:none;" @load="isIframeLoading = false"></iframe>
+        </DialogContent>
+    </Dialog>
+
 </template>

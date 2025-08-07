@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { LinkIcon } from "@heroicons/vue/24/outline";
 defineProps<{
-    href: string;
+    href?: string;
 }>();
 </script>
 
