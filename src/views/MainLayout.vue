@@ -1,0 +1,14 @@
+<script setup lang="ts">
+import MenuBar from '@/components/menu/MenuBar.vue';
+import Footer from '@/components/common/footer/Footer.vue';
+</script>
+
+<template>
+    <div id="mainLayout" class="flex flex-col h-full overflow-y-auto">
+        <MenuBar class="sticky top-0 left-0 right-0 z-50"/>
+        <div class="flex-1 px-15 py-5">
+            <router-view />
+        </div>
+        <Footer />
+    </div>
+</template>
